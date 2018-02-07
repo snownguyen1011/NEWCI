@@ -25,7 +25,8 @@ mvn clean package'''
         }
         stage('Archive ') {
           steps {
-            sh 'archiveArtifacts artifacts: \'/var/lib/jenkins/.m2/repository/org/sonatype/com/simplewebapp/1.2/*.war\', onlyIfSuccessful: true'
+            archiveArtifacts artifacts: '/var/lib/jenkins/.m2/repository/org/sonatype/com/simplewebapp/1.2/*.war', onlyIfSuccessful: true
+
           }
         }
       }
