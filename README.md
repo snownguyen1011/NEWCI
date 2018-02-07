@@ -1,0 +1,2 @@
+# NEWCI
+Used declarative
