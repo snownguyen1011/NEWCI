@@ -21,9 +21,9 @@ pipeline {
 mvn clean install'''
       }
     }
-    stage('') {
+    stage('error') {
       steps {
-        archiveArtifacts '*.war'
+        archiveArtifacts 'simplewebapp-1.2.war'
       }
     }
   }
