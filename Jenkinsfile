@@ -6,5 +6,10 @@ pipeline {
         git(url: 'https://github.com/snownguyen1011/CICD.git', branch: 'master', credentialsId: 'ravirajakoineni')
       }
     }
+    stage('Build') {
+      steps {
+        sh 'mvn clean install'
+      }
+    }
   }
 }
