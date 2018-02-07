@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('SCM-Checkout') {
       steps {
-        git(url: 'https://github.com/snownguyen1011/CICD.git', branch: 'master', credentialsId: 'ravirajakoineni')
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'ravi', url: 'https://github.com/snownguyen1011/CICD.git']]])
       }
     }
     stage('Build') {
