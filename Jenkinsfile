@@ -25,7 +25,7 @@ mvn clean install'''
         }
         stage('error') {
           steps {
-            archiveArtifacts '/var/lib/jenkins/workspace/NEWCI_master-VIG6SFZFSE5Q75WN6JARQS22S2QDY5YYLLLRDXPZTU4RJWVJNSYQ/{project-name}/target/*.war'
+            archiveArtifacts '/var/lib/jenkins/workspace/NEWCI_master-VIG6SFZFSE5Q75WN6JARQS22S2QDY5YYLLLRDXPZTU4RJWVJNSYQ/{project-name}/target/"*.war"'
           }
         }
       }
