@@ -16,9 +16,18 @@ pipeline {
       }
     }
     stage('Build') {
-      steps {
-        sh '''cd /var/lib/jenkins/workspace/NEWCI_master-VIG6SFZFSE5Q75WN6JARQS22S2QDY5YYLLLRDXPZTU4RJWVJNSYQ/{project-name}/
+      parallel {
+        stage('Build') {
+          steps {
+            sh '''cd /var/lib/jenkins/workspace/NEWCI_master-VIG6SFZFSE5Q75WN6JARQS22S2QDY5YYLLLRDXPZTU4RJWVJNSYQ/{project-name}/
 mvn clean package'''
+          }
+        }
+        stage('') {
+          steps {
+            archiveArtifacts '*.war'
+          }
+        }
       }
     }
   }
