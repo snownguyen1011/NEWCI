@@ -8,7 +8,8 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'mvn clean install'
+        sh '''cd /var/lib/jenkins/workspace/NEWCI_master-VIG6SFZFSE5Q75WN6JARQS22S2QDY5YYLLLRDXPZTU4RJWVJNSYQ
+mvn clean install'''
       }
     }
   }
